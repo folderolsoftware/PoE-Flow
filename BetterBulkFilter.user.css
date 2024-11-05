@@ -1,3 +1,10 @@
+/* ==UserStyle==
+@name Path of Exile Better Bulk Filter
+@namespace https://github.com/folderolsoftware
+@version 1.0.0
+@license CC-BY-NC-ND-4.0
+==/UserStyle== */
+
 .dimmed .exchange-filter-item:not(.highlighted) {
     display: none;
 }
