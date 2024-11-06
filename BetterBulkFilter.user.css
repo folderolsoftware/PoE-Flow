@@ -5,19 +5,21 @@
 @license CC-BY-NC-ND-4.0
 ==/UserStyle== */
 
-.dimmed .exchange-filter-item:not(.highlighted) {
-    display: none;
-}
+@-moz-document url-prefix("https://www.pathofexile.com/trade/exchange/") {
+    .dimmed .exchange-filter-item:not(.highlighted) {
+        display: none;
+    }
 
-.dimmed .filter {
-    display: none;
-}
+    .dimmed .filter {
+        display: none;
+    }
 
-/** Using a :not for this is very slow, this is much faster */
-.dimmed .filter:has(.filter-match-subtext) {
-    display: table;
-}
+    /** Using a :not for this is very slow, this is much faster */
+    .dimmed .filter:has(.filter-match-subtext) {
+        display: table;
+    }
 
-.dimmed .split {
-    display: none;
+    .dimmed .split {
+        display: none;
+    }
 }
