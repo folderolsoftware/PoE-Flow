@@ -3,7 +3,6 @@ import { Metadata, userscriptMetadataGenerator } from 'userscript-metadata-gener
 
 const glob = require('glob');
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
 
 const scripts = glob.sync('./src/**/*.user.ts');
 
@@ -36,8 +35,7 @@ module.exports = {
         ]
     },
     optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin()]
+        minimize: false,
     },
     output: {
         clean: true,

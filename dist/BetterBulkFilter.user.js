@@ -1,1 +1,196 @@
-(()=>{"use strict";var e={882:(e,t,n)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.getPreviousSibling=t.getNextSibling=t.removeNodes=t.createStylesheet=void 0;var r=n(11);Object.defineProperty(t,"createStylesheet",{enumerable:!0,get:function(){return r.createStylesheet}});var i=n(141);Object.defineProperty(t,"removeNodes",{enumerable:!0,get:function(){return i.removeNodes}});var o=n(89);Object.defineProperty(t,"getNextSibling",{enumerable:!0,get:function(){return o.getNextSibling}});var s=n(457);Object.defineProperty(t,"getPreviousSibling",{enumerable:!0,get:function(){return s.getPreviousSibling}})},11:(e,t)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.createStylesheet=function(e){const t=document.createElement("style");return t.innerText=e,document.head.appendChild(t),t}},141:(e,t)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.removeNodes=function(e){if(!e)return!1;const t=e instanceof Element?[e]:[...e];if(t.length>0)return t.forEach((e=>e.remove())),!0;return!1}},89:(e,t)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.getNextSibling=function(e,t){var n=e.nextElementSibling;if(!t)return n;for(;n;){if(t instanceof RegExp&&(t.test(n.className)||t.test(n.id)))return n;if("string"==typeof t&&n.matches(t))return n;n=n.nextElementSibling}}},457:(e,t)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.getPreviousSibling=function(e,t){var n=e.previousElementSibling;if(!t)return n;for(;n;){if(t instanceof RegExp&&(t.test(n.className)||t.test(n.id)))return n;if("string"==typeof t&&n.matches(t))return n;n=n.previousElementSibling}}}},t={};function n(r){var i=t[r];if(void 0!==i)return i.exports;var o=t[r]={exports:{}};return e[r](o,o.exports,n),o.exports}(()=>{const e=n(882);(new class{addStyles(){(0,e.createStylesheet)("\n            .dimmed .exchange-filter-item:not(.highlighted) {\n                display: none;\n            }\n\n            .dimmed .filter {\n                display: none;\n            }\n\n            /** Using a :not for this is very slow, this is much faster */\n            .dimmed .filter:has(.filter-match-subtext) {\n                display: table;\n            }\n\n            .dimmed .split {\n                display: none;\n            }\n        ")}main(){this.addStyles()}}).main()})()})();
+// ==UserScript==
+// @name          Path of Exile Better Bulk Filter
+// @description   Completely hides unhighlighted items and categories in PoE bulk trade
+// @inject-into   content
+// @match         https://www.pathofexile.com/trade/*
+// ==/UserScript==
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 882:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getPreviousSibling = exports.getNextSibling = exports.removeNodes = exports.createStylesheet = void 0;
+var createStylesheet_1 = __webpack_require__(11);
+Object.defineProperty(exports, "createStylesheet", ({ enumerable: true, get: function () { return createStylesheet_1.createStylesheet; } }));
+var removeNodes_1 = __webpack_require__(141);
+Object.defineProperty(exports, "removeNodes", ({ enumerable: true, get: function () { return removeNodes_1.removeNodes; } }));
+var getNextSibling_1 = __webpack_require__(89);
+Object.defineProperty(exports, "getNextSibling", ({ enumerable: true, get: function () { return getNextSibling_1.getNextSibling; } }));
+var getPreviousSibling_1 = __webpack_require__(457);
+Object.defineProperty(exports, "getPreviousSibling", ({ enumerable: true, get: function () { return getPreviousSibling_1.getPreviousSibling; } }));
+
+
+/***/ }),
+
+/***/ 11:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.createStylesheet = createStylesheet;
+function createStylesheet(styles) {
+    const stylesheet = document.createElement('style');
+    stylesheet.innerText = styles;
+    document.head.appendChild(stylesheet);
+    return stylesheet;
+}
+
+
+/***/ }),
+
+/***/ 141:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.removeNodes = removeNodes;
+/**
+ * Removes a collection of HTML elements
+ * @param nodes result of calling document.getElement(.*) or document.querySelector(.*) methods
+ * @returns success or failure (no nodes to remove)
+ */
+function removeNodes(nodes) {
+    if (!nodes) {
+        return false;
+    }
+    const arr = nodes instanceof Element ? [nodes] : [...nodes];
+    if (arr.length > 0) {
+        arr.forEach(node => node.remove());
+        return true;
+    }
+    return false;
+}
+
+
+/***/ }),
+
+/***/ 89:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getNextSibling = getNextSibling;
+// also from gomakethings.com
+// modified to accept regex
+function getNextSibling(elem, selector) {
+    // Get the next sibling element
+    var sibling = elem.nextElementSibling;
+    // If there's no selector, return the first sibling
+    if (!selector)
+        return sibling;
+    // If the sibling matches our selector, use it
+    // If not, jump to the next sibling and continue the loop
+    while (sibling) {
+        if (selector instanceof RegExp && (selector.test(sibling.className) || selector.test(sibling.id))) {
+            return sibling;
+        }
+        if (typeof selector === 'string' && sibling.matches(selector)) {
+            return sibling;
+        }
+        sibling = sibling.nextElementSibling;
+    }
+}
+
+
+/***/ }),
+
+/***/ 457:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getPreviousSibling = getPreviousSibling;
+// stolen from https://gomakethings.com/finding-the-next-and-previous-sibling-elements-that-match-a-selector-with-vanilla-js/
+// modified to accept regex
+function getPreviousSibling(elem, selector) {
+    // Get the next sibling element
+    var sibling = elem.previousElementSibling;
+    // If there's no selector, return the first sibling
+    if (!selector)
+        return sibling;
+    // If the sibling matches our selector, use it
+    // If not, jump to the next sibling and continue the loop
+    while (sibling) {
+        if (selector instanceof RegExp && (selector.test(sibling.className) || selector.test(sibling.id))) {
+            return sibling;
+        }
+        if (typeof selector === 'string' && sibling.matches(selector)) {
+            return sibling;
+        }
+        sibling = sibling.previousElementSibling;
+    }
+}
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it uses a non-standard name for the exports (exports).
+(() => {
+var exports = __webpack_exports__;
+var __webpack_unused_export__;
+
+__webpack_unused_export__ = ({ value: true });
+const userscript_utils_1 = __webpack_require__(882);
+class BetterBulkFilter {
+    addStyles() {
+        (0, userscript_utils_1.createStylesheet)(`
+            .dimmed .exchange-filter-item:not(.highlighted) {
+                display: none;
+            }
+
+            .dimmed .filter {
+                display: none;
+            }
+
+            /** Using a :not for this is very slow, this is much faster */
+            .dimmed .filter:has(.filter-match-subtext) {
+                display: table;
+            }
+
+            .dimmed .split {
+                display: none;
+            }
+        `);
+    }
+    main() {
+        this.addStyles();
+    }
+}
+new BetterBulkFilter().main();
+
+})();
+
+/******/ })()
+;
