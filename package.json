@@ -1,5 +1,6 @@
 {
     "name": "@folderol/poe-flow",
+    "sideEffects": false,
     "version": "0.0.1",
     "description": "scripts for PoE",
     "scripts": {
@@ -21,7 +22,8 @@
         "typescript": "^5.3.3",
         "userscript-metadata-generator": "^0.2.4",
         "userscript-utils": "github:rrowe404/userscript-utils",
-        "webpack": "^5.93.0"
+        "webpack": "^5.93.0",
+        "webpack-userscript-config": "github:folderolsoftware/webpack-userscript-config"
     },
     "devDependencies": {
         "webpack-cli": "^5.1.4"
