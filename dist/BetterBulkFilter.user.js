@@ -11,17 +11,18 @@
 /***/ 882:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+var __webpack_unused_export__;
 
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getPreviousSibling = exports.getNextSibling = exports.removeNodes = exports.createStylesheet = void 0;
+__webpack_unused_export__ = ({ value: true });
+__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.fX = void 0;
 var createStylesheet_1 = __webpack_require__(11);
-Object.defineProperty(exports, "createStylesheet", ({ enumerable: true, get: function () { return createStylesheet_1.createStylesheet; } }));
+Object.defineProperty(exports, "fX", ({ enumerable: true, get: function () { return createStylesheet_1.createStylesheet; } }));
 var removeNodes_1 = __webpack_require__(141);
-Object.defineProperty(exports, "removeNodes", ({ enumerable: true, get: function () { return removeNodes_1.removeNodes; } }));
+__webpack_unused_export__ = ({ enumerable: true, get: function () { return removeNodes_1.removeNodes; } });
 var getNextSibling_1 = __webpack_require__(89);
-Object.defineProperty(exports, "getNextSibling", ({ enumerable: true, get: function () { return getNextSibling_1.getNextSibling; } }));
+__webpack_unused_export__ = ({ enumerable: true, get: function () { return getNextSibling_1.getNextSibling; } });
 var getPreviousSibling_1 = __webpack_require__(457);
-Object.defineProperty(exports, "getPreviousSibling", ({ enumerable: true, get: function () { return getPreviousSibling_1.getPreviousSibling; } }));
+__webpack_unused_export__ = ({ enumerable: true, get: function () { return getPreviousSibling_1.getPreviousSibling; } });
 
 
 /***/ }),
@@ -156,16 +157,11 @@ function getPreviousSibling(elem, selector) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it uses a non-standard name for the exports (exports).
-(() => {
-var exports = __webpack_exports__;
-var __webpack_unused_export__;
+/* harmony import */ var userscript_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882);
 
-__webpack_unused_export__ = ({ value: true });
-const userscript_utils_1 = __webpack_require__(882);
 class BetterBulkFilter {
     addStyles() {
-        (0, userscript_utils_1.createStylesheet)(`
+        (0,userscript_utils__WEBPACK_IMPORTED_MODULE_0__/* .createStylesheet */ .fX)(`
             .dimmed .exchange-filter-item:not(.highlighted) {
                 display: none;
             }
@@ -189,8 +185,6 @@ class BetterBulkFilter {
     }
 }
 new BetterBulkFilter().main();
-
-})();
 
 /******/ })()
 ;
