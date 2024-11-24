@@ -23,7 +23,7 @@
         "userscript-metadata-generator": "^0.2.4",
         "userscript-utils": "github:rrowe404/userscript-utils",
         "webpack": "^5.93.0",
-        "webpack-userscript-plugin": "github:folderolsoftware/webpack-userscript-plugin"
+        "webpack-userscript-config": "github:folderolsoftware/webpack-userscript-config"
     },
     "devDependencies": {
         "webpack-cli": "^5.1.4"
