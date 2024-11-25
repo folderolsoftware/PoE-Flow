@@ -13,7 +13,6 @@
     "license": "MIT",
     "dependencies": {
         "husky": "^9.0.11",
-        "ts-loader": "^9.5.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3",
         "userscript-metadata-generator": "^0.2.4",
