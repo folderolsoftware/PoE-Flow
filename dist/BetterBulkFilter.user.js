@@ -2,7 +2,7 @@
 // @name          Path of Exile Better Bulk Filter
 // @description   Completely hides unhighlighted items and categories in PoE bulk trade
 // @inject-into   content
-// @match         https://www.pathofexile.com/trade/*
+// @match         https://www.pathofexile.com/trade*
 // ==/UserScript==
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";

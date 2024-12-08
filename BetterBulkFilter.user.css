@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name Path of Exile Better Bulk Filter
 @namespace https://github.com/folderolsoftware
-@version 1.0.0
+@version 1.0.1
 @license CC-BY-NC-ND-4.0
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://www.pathofexile.com/trade/exchange/") {
+@-moz-document url-prefix("https://www.pathofexile.com/trade") {
     .dimmed .exchange-filter-item:not(.highlighted) {
         display: none;
     }
