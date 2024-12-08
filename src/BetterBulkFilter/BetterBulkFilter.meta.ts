@@ -4,10 +4,7 @@ const metadata: Metadata = {
     name: 'Path of Exile Better Bulk Filter',
     description: 'Completely hides unhighlighted items and categories in PoE bulk trade',
     'inject-into': 'content',
-    match: [
-        'https://www.pathofexile.com/trade/*',
-        'https://www.pathofexile.com/trade2/*'
-    ]
+    match: 'https://www.pathofexile.com/trade*',
 }
 
 module.exports = metadata;
