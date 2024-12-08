@@ -3,6 +3,7 @@
 // @description   Completely hides unhighlighted items and categories in PoE bulk trade
 // @inject-into   content
 // @match         https://www.pathofexile.com/trade/*
+// @match         https://www.pathofexile.com/trade2/*
 // ==/UserScript==
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
